@@ -1,0 +1,5 @@
+---
+# This directory contains defaults for variables used in this role
+
+# the complete url for the x-twm rpm file
+xtwm_rpm_url: http://mirror.centos.org/centos/6/os/x86_64/Packages/xorg-x11-twm-1.0.3-5.1.el6.x86_64.rpm
