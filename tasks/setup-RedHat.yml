@@ -1,28 +1,31 @@
 ---
 
 - name: yum install packages for TWM minimal gui
-  yum: name={{ item }} state=present update_cache=yes
-  with_items:
-   - "@X Window System"
-   - xorg-x11-font-utils.x86_64
-   - xorg-x11-fonts-100dpi.noarch
-   - xorg-x11-fonts-75dpi.noarch
-   - xorg-x11-fonts-Type1.noarch
-   - xorg-x11-fonts-misc
-   - xorg-x11-xauth.x86_64
-   - libX11.x86_64
-   - dbus-x11.x86_64
-   - xorg-x11-server-utils.x86_64
-   - xorg-x11-xkb-utils.x86_64
-   - xterm
-   - xclock
-   ## those dependencies seem not needed seperately:
-   #- libICE
-   #- libSM
-   #- libXext
-   #- libXmu
-   #- libXt
-   #- libc.so.6
+  yum:
+    name:
+     - "@base-x"
+     - xorg-x11-font-utils.x86_64
+     - xorg-x11-fonts-100dpi.noarch
+     - xorg-x11-fonts-75dpi.noarch
+     - xorg-x11-fonts-Type1.noarch
+     - xorg-x11-fonts-misc
+     - xorg-x11-xauth.x86_64
+     - libX11.x86_64
+     - dbus-x11.x86_64
+     - xorg-x11-server-utils.x86_64
+     - xorg-x11-xkb-utils.x86_64
+     - xterm
+     # - xclock
+    state: present
+    update_cache: yes
+     # - "@X Window System"
+     ## those dependencies seem not needed seperately:
+     #- libICE
+     #- libSM
+     #- libXext
+     #- libXmu
+     #- libXt
+     #- libc.so.6
 
 - name: add TWM window manager rpm
   yum:

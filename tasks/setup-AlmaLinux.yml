@@ -2,4 +2,4 @@
 
 # include setting up specific to operating system
 
-- include_tasks: "setup-{{ ansible_os_family }}.yml"
+- include_tasks: "setup-RedHat.yml"
